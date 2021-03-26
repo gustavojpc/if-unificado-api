@@ -10,7 +10,6 @@ class IteracaoFaseController extends Controller
     public function getIteracoesFases(Request $request) {
         $query = IteracaoFase::query();
         $query->with([
-            'artefatos.artefatosTitulos.artefatosTitulosSubtitulos',
             'artefatos.templates',
         ]);
         $query->where('id', $request->id);

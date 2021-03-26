@@ -91,4 +91,11 @@ class ArtefatosController extends Controller
     public function fillArtefatos() {
         return Artefatos::get();
     }
+    public function getArtefatosById(Request $request) {
+        $query = Artefatos::query();
+        $query->with(['artefatosTitulos.artefatosTitulosSubtitulos']);
+        $query->with(['templates']);
+        $query->where('id', $request->id);
+        return $query->first();
+    }
 }

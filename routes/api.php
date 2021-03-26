@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtefatosController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IteracaoFaseController;
@@ -26,7 +27,7 @@ use Mockery\Matcher\Any;
 
 // Route::get('users', [UserController::class, 'index']);
 
-Route::middleware(['apiJwt'])->group(function () {
+// Route::middleware(['apiJwt'])->group(function () {
     Route::get('users', [UserController::class, 'index']);
 
     Route::prefix('projetos')->group(function () {
@@ -40,9 +41,12 @@ Route::middleware(['apiJwt'])->group(function () {
     Route::prefix('iteracao-fase')->group(function () {
         Route::get('get-item', [IteracaoFaseController::class, 'getIteracoesFases']);
     });
+    Route::prefix('artefato')->group(function () {
+        Route::get('get-artefato-by-id', [ArtefatosController::class, 'getArtefatosById']);
+    });
 
     Route::post('logout', [AuthController::class, 'logout']);
-});
+// });
 
 
 
