@@ -43,6 +43,7 @@ use Mockery\Matcher\Any;
     });
     Route::prefix('artefato')->group(function () {
         Route::get('get-artefato-by-id', [ArtefatosController::class, 'getArtefatosById']);
+        Route::put('updated-artefato-titulos-subtitulos', [ArtefatosController::class, 'udpateArtefatoTitulosAndSubtitulos']);
     });
 
     Route::post('logout', [AuthController::class, 'logout']);

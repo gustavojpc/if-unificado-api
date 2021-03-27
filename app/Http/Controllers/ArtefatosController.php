@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artefatos;
+use App\Models\ArtefatosTitulos;
+use App\Models\ArtefatosTitulosSubtitulos;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ArtefatosController extends Controller
 {
@@ -97,5 +101,28 @@ class ArtefatosController extends Controller
         $query->with(['templates']);
         $query->where('id', $request->id);
         return $query->first();
+    }
+
+    public function udpateArtefatoTitulosAndSubtitulos(Request $request) {
+        try {
+            DB::beginTransaction();
+                foreach($request->artefatos_titulos as $item) {
+                    $artefatoTitulo = ArtefatosTitulos::find($item['id']);
+                    $artefatoTitulo->descricao = $item['descricao'];
+                    $artefatoTitulo->save();
+                    // dd()
+                    foreach($item['artefatos_titulos_subtitulos'] as $itemSubtitulo) {
+                        $artefatoTituloSubtitulo = ArtefatosTitulosSubtitulos::find($itemSubtitulo['id']);
+                        $artefatoTituloSubtitulo->descricao = $item['descricao'];
+                        $artefatoTituloSubtitulo->save();
+                    }
+
+                }
+            DB::commit();
+            return response()->json(['status' => 'Updated'], 201);
+        } catch(Exception $error) {
+            dd($error);
+            DB::rollback();
+        };
     }
 }
