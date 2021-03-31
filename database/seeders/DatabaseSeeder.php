@@ -17,9 +17,14 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
             FasesSeeder::class,
-            TemplatesSeeder::class,
-            TitulosSeeder::class,
-            SubtitulosSeeder::class,
+            // TemplatesSeeder::class,
+            // TitulosSeeder::class,
+            // SubtitulosSeeder::class,
+            AvaliacaoOrganizaçãoAlvoSeeder::class,
+            DocumentoArquiteturaNegociosSeeder::class,
+            GlossarioNegociosSeeder::class,
+            RegrasDoNegociosSeeder::class,
+            VisaoDeNegociosSeeder::class,
         ]);
 
     }

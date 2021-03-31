@@ -18,18 +18,7 @@ class TitulosSeeder extends Seeder
     {
         Model::unguard();
 
-        Titulo::create([
-            'nome' => 'Introdução',
-            'slug' => 'casos_de_uso',
-            'ordem' => 1,
-            'template_id' => Templates::where('slug', 'casos_de_uso')->first()->id,
-        ]);
-        Titulo::create([
-            'nome' => 'Desenvolvimento',
-            'slug' => 'desenvolvimento',
-            'ordem' => 2,
-            'template_id' => Templates::where('slug', 'casos_de_uso')->first()->id,
-        ]);
+
 
         Model::reguard();
     }

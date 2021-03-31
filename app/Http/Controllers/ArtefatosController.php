@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artefatos;
 use App\Models\ArtefatosTitulos;
 use App\Models\ArtefatosTitulosSubtitulos;
+use PDF;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -101,6 +102,16 @@ class ArtefatosController extends Controller
         $query->with(['templates']);
         $query->where('id', $request->id);
         return $query->first();
+    }
+
+    public function generatePDF() {
+        $query = Artefatos::query();
+        $query->with(['artefatosTitulos.artefatosTitulosSubtitulos']);
+        $query->with(['templates']);
+        $query->where('id', 3);
+        $artefato = $query->first();
+        $pdf = PDF::loadView('PDF.artefatopdf',compact('artefato'));
+        return $pdf ->setPaper('a4')->stream('PedidoAPJ.pdf');
     }
 
     public function udpateArtefatoTitulosAndSubtitulos(Request $request) {

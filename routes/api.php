@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IteracaoFaseController;
 use App\Http\Controllers\IteracoesController;
 use App\Http\Controllers\ProjetosController;
+use App\Models\Artefatos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Mockery\Matcher\Any;
@@ -47,6 +48,8 @@ use Mockery\Matcher\Any;
     });
 
     Route::post('logout', [AuthController::class, 'logout']);
+
+    Route::get('generate-pdf', [ArtefatosController::class, 'generatePDF']);
 // });
 
 

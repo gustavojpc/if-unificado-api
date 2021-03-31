@@ -19,15 +19,11 @@ class TemplatesSeeder extends Seeder
         Model::unguard();
 
         Templates::create([
-            'nome' => 'Casos de uso',
-            'slug' => 'casos_de_uso',
+            'nome' => 'Avaliação da Organização Alvo',
+            'slug' => 'avaliacao_da_organizacao_alvo',
             'fase_id' => Fase::where('slug', 'modelagem_de_negocios')->first()->id,
         ]);
-        Templates::create([
-            'nome' => 'Diagrama de sla oke',
-            'slug' => 'diagrama',
-            'fase_id' => Fase::where('slug', 'modelagem_de_negocios')->first()->id,
-        ]);
+
 
         Model::reguard();
     }
