@@ -9,7 +9,7 @@ use App\Models\Titulo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
-class PlanoDeIntegracaoDeConstrucaosSeeder extends Seeder
+class GlossariooSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,28 +21,28 @@ class PlanoDeIntegracaoDeConstrucaosSeeder extends Seeder
         Model::unguard();
 
         Templates::create([
-            'nome' => 'Plano de Integração de Construção',
-            'slug' => 'plano_de_integracao_de_construcao',
-            'fase_id' => Fase::where('slug', 'implementacao')->first()->id,
+            'nome' => 'Glossário',
+            'slug' => 'glossario',
+            'fase_id' => Fase::where('slug', 'requisitos')->first()->id,
         ]);
 
         Titulo::create([
             'nome' => 'Introdução',
             'slug' => 'introducao',
             'ordem' => 1,
-            'template_id' => Templates::where('slug', 'plano_de_integracao_de_construcao')->first()->id,
+            'template_id' => Templates::where('slug', 'glossario')->first()->id,
         ]);
         Titulo::create([
-            'nome' => 'Subsistemas',
-            'slug' => 'subsistemas',
+            'nome' => 'Definições',
+            'slug' => 'definicoes',
             'ordem' => 2,
-            'template_id' => Templates::where('slug', 'plano_de_integracao_de_construcao')->first()->id,
+            'template_id' => Templates::where('slug', 'glossario')->first()->id,
         ]);
         Titulo::create([
-            'nome' => 'Builds',
-            'slug' => 'builds',
-            'ordem' => 2,
-            'template_id' => Templates::where('slug', 'plano_de_integracao_de_construcao')->first()->id,
+            'nome' => 'Estereótipos UML ',
+            'slug' => 'estereotipos_uml',
+            'ordem' => 3,
+            'template_id' => Templates::where('slug', 'glossario')->first()->id,
         ]);
 
 
@@ -51,35 +51,47 @@ class PlanoDeIntegracaoDeConstrucaosSeeder extends Seeder
             'nome' => 'Objetivo',
             'slug' => 'objetivo',
             'ordem' => 1,
-            'titulo_id' => 32,
+            'titulo_id' => 65,
+        ]);
+
+
+        Subtitulos::create([
+            'nome' => 'Objetivo',
+            'slug' => 'objetivo',
+            'ordem' => 1,
+            'titulo_id' => 65,
         ]);
         Subtitulos::create([
             'nome' => 'Escopo',
             'slug' => 'escopo',
             'ordem' => 2,
-            'titulo_id' => 32,
+            'titulo_id' => 65,
         ]);
         Subtitulos::create([
             'nome' => 'Definições, acrônimos e abreviações',
             'slug' => 'definicoes_acronimos_abreviacoes',
             'ordem' => 3,
-            'titulo_id' => 32,
+            'titulo_id' => 65,
         ]);
         Subtitulos::create([
             'nome' => 'Referências',
             'slug' => 'referencias',
             'ordem' => 4,
-            'titulo_id' => 32,
+            'titulo_id' => 65,
         ]);
 
         Subtitulos::create([
             'nome' => 'Visão Geral',
             'slug' => 'visao_geral',
             'ordem' => 5,
-            'titulo_id' => 32,
+            'titulo_id' => 65,
         ]);
-
-
+        Subtitulos::create([
+            'nome' => 'Termos',
+            'slug' => 'termos',
+            'ordem' => 1,
+            'titulo_id' => 66,
+        ]);
 
 
         Model::reguard();

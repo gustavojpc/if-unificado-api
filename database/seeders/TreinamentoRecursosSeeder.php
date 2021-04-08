@@ -9,7 +9,7 @@ use App\Models\Titulo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
-class PlanoDeIntegracaoDeConstrucaosSeeder extends Seeder
+class TreinamentoRecursosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,28 +21,28 @@ class PlanoDeIntegracaoDeConstrucaosSeeder extends Seeder
         Model::unguard();
 
         Templates::create([
-            'nome' => 'Plano de Integração de Construção',
-            'slug' => 'plano_de_integracao_de_construcao',
-            'fase_id' => Fase::where('slug', 'implementacao')->first()->id,
+            'nome' => 'Especificação de realização de caso de uso',
+            'slug' => 'especificacao_de_realizacao_de_caso_de_uso',
+            'fase_id' => Fase::where('slug', 'analise_design')->first()->id,
         ]);
 
         Titulo::create([
             'nome' => 'Introdução',
             'slug' => 'introducao',
             'ordem' => 1,
-            'template_id' => Templates::where('slug', 'plano_de_integracao_de_construcao')->first()->id,
+            'template_id' => Templates::where('slug', 'documento_de_arquitetura_de_software')->first()->id,
         ]);
         Titulo::create([
-            'nome' => 'Subsistemas',
-            'slug' => 'subsistemas',
+            'nome' => 'Fluxo de Eventos - Design',
+            'slug' => 'fluxo_de_eventos_design',
             'ordem' => 2,
-            'template_id' => Templates::where('slug', 'plano_de_integracao_de_construcao')->first()->id,
+            'template_id' => Templates::where('slug', 'documento_de_arquitetura_de_software')->first()->id,
         ]);
         Titulo::create([
-            'nome' => 'Builds',
-            'slug' => 'builds',
-            'ordem' => 2,
-            'template_id' => Templates::where('slug', 'plano_de_integracao_de_construcao')->first()->id,
+            'nome' => 'Requisitos derivados',
+            'slug' => 'requisitos_derivados',
+            'ordem' => 3,
+            'template_id' => Templates::where('slug', 'documento_de_arquitetura_de_software')->first()->id,
         ]);
 
 
@@ -51,33 +51,37 @@ class PlanoDeIntegracaoDeConstrucaosSeeder extends Seeder
             'nome' => 'Objetivo',
             'slug' => 'objetivo',
             'ordem' => 1,
-            'titulo_id' => 32,
+            'titulo_id' => 119,
         ]);
         Subtitulos::create([
             'nome' => 'Escopo',
             'slug' => 'escopo',
             'ordem' => 2,
-            'titulo_id' => 32,
+            'titulo_id' => 119,
         ]);
         Subtitulos::create([
             'nome' => 'Definições, acrônimos e abreviações',
             'slug' => 'definicoes_acronimos_abreviacoes',
             'ordem' => 3,
-            'titulo_id' => 32,
+            'titulo_id' => 119,
         ]);
         Subtitulos::create([
             'nome' => 'Referências',
             'slug' => 'referencias',
             'ordem' => 4,
-            'titulo_id' => 32,
+            'titulo_id' => 119,
         ]);
 
         Subtitulos::create([
             'nome' => 'Visão Geral',
             'slug' => 'visao_geral',
             'ordem' => 5,
-            'titulo_id' => 32,
+            'titulo_id' => 119,
         ]);
+
+
+
+
 
 
 

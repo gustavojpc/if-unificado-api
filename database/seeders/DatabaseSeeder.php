@@ -25,6 +25,19 @@ class DatabaseSeeder extends Seeder
             GlossarioNegociosSeeder::class,
             RegrasDoNegociosSeeder::class,
             VisaoDeNegociosSeeder::class,
+            PlanoDeIntegracaoDeConstrucaosSeeder::class,
+            PlanoDeTestesSeeder::class,
+            ResumoDeAvaliacaoSeeder::class,
+            CasosDeUsosSeeder::class,
+            RealizacaoCasosDeUsoSeeder::class,
+            GlossariooSeeder::class,
+            VisaoSeeder::class,
+            StakeholdersSeeder::class,
+            EspecCasosDeUsoSeeder::class,
+            EspecComplementarSeeder::class,
+            RequisitosDeSoftwareSeeder::class,
+            ArquiteturaSoftwareSeeder::class,
+            TreinamentoRecursosSeeder::class,
         ]);
 
     }
