@@ -60,7 +60,7 @@ task('deploy', [
     'artisan:view:cache',
     'artisan:config:cache',
     'artisan:migrate',
-    'db:seed',
+    'artisan:db:seed',
     'artisan:queue:restart',
     'deploy:symlink',
     'deploy:unlock',
