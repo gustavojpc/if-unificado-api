@@ -31,10 +31,11 @@ task('deploy:secrets', function () {
 });
 
 host('if-unificado.gustavopjc.tech')
-  ->hostname('104.248.172.220')
+  ->hostname('151.106.97.102')
   ->stage('production')
-  ->user('root')
-  ->set('deploy_path', '/domains/gustavopjc.tech/public_html/if-unificado');
+  ->user('u346185445')
+  ->set('deploy_path', '/domains/gustavopjc.tech/public_html/if-unificado')
+    ->set('branch', 'main');
 
 host('staging.myapp.io')
   ->hostname('104.248.172.220')
