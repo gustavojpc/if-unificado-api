@@ -34,8 +34,9 @@ host('if-unificado.gustavopjc.tech')
   ->hostname('151.106.97.102')
   ->stage('production')
   ->user('u346185445')
+  ->port(65002)
   ->set('deploy_path', '/domains/gustavopjc.tech/public_html/if-unificado')
-    ->set('branch', 'main');
+  ->set('branch', 'main');
 
 host('staging.myapp.io')
   ->hostname('104.248.172.220')
