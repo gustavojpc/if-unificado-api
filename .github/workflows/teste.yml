@@ -1,5 +1,3 @@
-name: PUSH Workflow
-
 on:
   push:
     branches:
@@ -89,7 +87,7 @@ jobs:
         uses: atymic/deployer-php-action@master
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-known-hosts: ${{ secrets.SSH_HOST }}
+          ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
       - name: Deploy to PRODUCTION Server
         env:
           DOT_ENV: ${{ secrets.DOT_ENV_PRODUCTION }}
@@ -117,7 +115,7 @@ jobs:
         uses: atymic/deployer-php-action@master
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-known-hosts: ${{ secrets.SSH_HOST }}
+          ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
       - name: Deploy to Prod
         env:
           DOT_ENV: ${{ secrets.DOT_ENV_STAGING }}
