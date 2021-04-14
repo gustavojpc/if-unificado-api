@@ -40,7 +40,7 @@ host('staging.myapp.io')
   ->hostname('104.248.172.220')
   ->stage('staging')
   ->user('root')
-  ->set('deploy_path', '/var/www/my-app-staging');
+  ->set('deploy_path', '/var/www/my-app-stasging');
 
 after('deploy:failed', 'deploy:unlock');
 
